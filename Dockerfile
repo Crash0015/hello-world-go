@@ -1,11 +1,11 @@
-# Use a Go base image
+# Use a base image of Go
 FROM golang:1.18-alpine
 
-# Set up a working directory
+# Create a directory for the application
 WORKDIR /app
 
-# Copy the Go file into the container
-COPY main.go .
+# Copy all Go files (including go.mod and go.sum) to the container
+COPY . .
 
 # Compile the Go file
 RUN go build -o hello
